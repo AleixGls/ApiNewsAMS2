@@ -29,4 +29,4 @@ function onDeviceReady() {
 }
 
 // init Materialize
-M.AutoInit();
+M.AutoInit(); 
