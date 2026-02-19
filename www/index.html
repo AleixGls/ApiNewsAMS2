@@ -2,61 +2,69 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com https://fonts.gstatic.com https://cdn.jsdelivr.net https://fonts.googleapis.com 'unsafe-eval'; style-src https://cdn.jsdelivr.net https://fonts.googleapis.com 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com https://fonts.gstatic.com https://cdn.jsdelivr.net https://fonts.googleapis.com https://api.spaceflightnewsapi.net 'unsafe-eval'; style-src https://cdn.jsdelivr.net https://fonts.googleapis.com 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content: https:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
 
-        <title>AMS2 materialize - ALS</title>
+        <title>ApiNewsAMS2 | SpaceFlightNews API | ALS</title>
 
         <!-- Fonts Google -->
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <!-- CSS materialize -->
         <link rel="stylesheet" href="css/materialize.min.css" />
         <!-- CSS personalitzat -->
         <link rel="stylesheet" href="css/style.css" media="screen,projection" />
     </head>
     <body>
-        <!-- AQUI VAN ELS CONTINGUTS -->
-        <nav class="nav navbar">
+
+        <!-- NAVBAR -->
+        <nav class="nav navbar blue darken-3">
           <div class="nav-wrapper">
-            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-            <a href="#" class="brand-logo">Logo</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Sass</a></li>
-                    <li><a href="badges.html">Components</a></li>
-                    <li><a href="collapsible.html">JavaScript</a></li>
-                </ul>
-            </div>
+            <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
+              <i class="material-icons">menu</i>
+            </a>
+            <a href="#" class="brand-logo center">
+              <i class="material-icons">rocket_launch</i> ApiNewsAMS2 | SpaceFlightNews API
+            </a>
+          </div>
         </nav>
 
+        <!-- SIDENAV -->
         <ul id="slide-out" class="sidenav">
             <li><div class="user-view">
-                <div class="background">
-                    <img src="img/Placeholder.png">
-                </div>
-                <a href="#user"><img class="circle" src="img/Portrait_Placeholder.png"></a>
-                <a href="#name"><span class="white-text name">John Doe</span></a>
-                <a href="#email"><span class="white-text email">jdoe@example.com</span></a>
+                <div class="background blue darken-3"></div>
+                <a href="#name"><span class="white-text name">ApiNewsAMS2</span></a>
+                <a href="#email"><span class="white-text email">spaceflightnewsapi.net</span></a>
             </div></li>
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-            <li><a href="#!">Second Link</a></li>
-            <li><div class="divider"></div></li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            <li><a href="#!" onclick="loadTab('articles')"><i class="material-icons">article</i>Articles</a></li>
+            <li><a href="#!" onclick="loadTab('blogs')"><i class="material-icons">rss_feed</i>Blogs</a></li>
+            <li><a href="#!" onclick="loadTab('reports')"><i class="material-icons">summarize</i>Reports</a></li>
         </ul>
-        
-        <ul class="tabs tabs-fixed-width tab-demo tabs-horizontal z-depth-1">
-            <li class="tab"><a href="#image-test1"><i class="material-icons">flight</i>Flight</a></li>
-            <li class="tab"><a class="active" href="#image-test2"><i class="material-icons">luggage</i>Luggage</a></li>
-            <li class="tab"><a href="#image-test3"><i class="material-icons">explore</i>Explore</a></li>
-        </ul>              
-        <div id="image-test1" class="col s12"><p>Flight</p></div>
-        <div id="image-test2" class="col s12"><p>Luggage</p></div>
-        <div id="image-test3" class="col s12"><p>Explore</p></div>
+
+        <!-- TABS -->
+        <ul class="tabs tabs-fixed-width tab-demo z-depth-1">
+            <li class="tab"><a href="#tab-articles"><i class="material-icons">article</i> Articles</a></li>
+            <li class="tab"><a href="#tab-blogs"><i class="material-icons">rss_feed</i> Blogs</a></li>
+            <li class="tab"><a href="#tab-reports"><i class="material-icons">summarize</i> Reports</a></li>
+        </ul>
+
+        <!-- CONTINGUT TABS -->
+        <div id="tab-articles" class="col s12">
+            <div id="articles-container" class="row">
+                <p class="center grey-text">Loading articles...</p>
+            </div>
+        </div>
+        <div id="tab-blogs" class="col s12">
+            <div id="blogs-container" class="row">
+                <p class="center grey-text">Loading blogs...</p>
+            </div>
+        </div>
+        <div id="tab-reports" class="col s12">
+            <div id="reports-container" class="row">
+                <p class="center grey-text">Loading reports...</p>
+            </div>
+        </div>
 
         <!-- cordova lib -->
         <script src="cordova.js"></script>
